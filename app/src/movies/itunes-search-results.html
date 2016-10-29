@@ -1,0 +1,36 @@
+<ion-view view-title="{{itunesSearchResultsCtrl.name}} ({{itunesSearchResultsCtrl.moviesFilter.length}} / {{itunesSearchResultsCtrl.movies.length}})" ng-click="itunesSearchResultsCtrl.queryClear()">
+
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon ion-navicon"
+                ng-click="itunesSearchResultsCtrl.moviesSearch()">
+        </button>
+    </ion-nav-buttons>
+
+    <div class="bar bar-subheader item-input-inset bar-light">
+        <label class="item-input-wrapper">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" ng-model="itunesSearchResultsCtrl.query.trackName" ng-change="itunesSearchResultsCtrl.queryChanged()"
+                   placeholder="Search">
+            <i class="ion-close-round" ng-show="itunesSearchResultsCtrl.clear"></i>
+        </label>
+    </div>
+
+    <ion-content class="has-subheader">
+
+        <ion-list>
+            <div collection-repeat="item in (itunesSearchResultsCtrl.moviesFilter = (itunesSearchResultsCtrl.movies | filter: itunesSearchResultsCtrl.query))"
+                    type="item-text-wrap" ng-click="itunesSearchResultsCtrl.moviesDetails(item)">
+                
+                <a class="item item-thumbnail-left">
+                    <img ng-src="{{item.artworkUrl100.replace('100x100bb.jpg', '500x500bb.jpg')}}">
+                    <h2>{{item.trackName}}</h2>
+                    <p>{{item.country}} - {{item.releaseDate | date:'yyyy'}}</p>
+                    <p>{{item.primaryGenreName}}</p>
+                    <p>{{item.artistName}}</p>
+                </a>
+				
+            </div>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

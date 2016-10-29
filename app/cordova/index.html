@@ -1,0 +1,40 @@
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript">
+    var admobid = {};
+    document.addEventListener("deviceready", initApp, false);
+
+    if( /(android)/i.test(navigator.userAgent) ) {
+        admobid = {
+            //banner: 'ca-app-pub-4884500146569199/4949665866' // UI-Horoscope
+            //banner: 'ca-app-pub-4884500146569199/3277785061' // UI-Collection
+            banner: 'ca-app-pub-4884500146569199/5596319463' // UI-Movies
+        };
+    }
+
+    function onDeviceReady() {
+        window.open = cordova.InAppBrowser.open;
+    }
+
+    function initApp() {
+        document.removeEventListener('deviceready', initApp, false);
+        if (AdMob) {
+            setTimeout(function() {
+                AdMob.createBanner({
+                    adId : admobid.banner,
+                    position : AdMob.AD_POSITION.BOTTOM_CENTER,
+                    autoShow : true
+                });
+            }, 1000);
+        }
+    }
+</script>
+
+<script>
+(function() {
+	function init() {
+		 window.location.href = "./app/index.html";
+	}
+
+	init();
+})();
+</script>

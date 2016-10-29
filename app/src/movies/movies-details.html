@@ -1,0 +1,85 @@
+<ion-view view-title="{{moviesDetailsCtrl.name}}">
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon ion-navicon"
+                ng-click="moviesDetailsCtrl.showSubmit()">
+        </button>
+    </ion-nav-buttons>
+
+    <ion-content class="padding">
+
+        <h2 align="center">{{moviesDetailsCtrl.name}}</h2>
+
+        <div class="list">
+			<label class="item">
+				<img ng-src="{{moviesDetailsCtrl.pic}}" class="img-max">
+			</label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>Year:</b></span>
+                <input type="text"
+                       ng-model="moviesDetailsCtrl.year">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>Country:</b></span>
+                <input type="text"
+                       ng-model="moviesDetailsCtrl.country">
+            </label>
+			
+            <label class="item item-input">
+                <span class="input-label"><b>Genre:</b></span>
+                <input type="text"
+                       ng-model="moviesDetailsCtrl.genre">
+            </label>
+			
+			<label class="item item-input">
+                <span class="input-label"><b>Director:</b></span>
+                <input type="text"
+                          ng-model="moviesDetailsCtrl.director">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>Actors:</b></span>
+                <input type="text"
+                       ng-model="moviesDetailsCtrl.actors">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>Runtime:</b></span>
+                <input type="text"
+                       ng-model="moviesDetailsCtrl.runtime">
+            </label>
+			
+            <label class="item item-input">
+                <span class="input-label"><b>Type:</b></span>
+                <input type="text"
+                       ng-model="moviesDetailsCtrl.type">
+            </label>
+			
+            <label class="item item-input">
+                <span class="input-label"><b>Rating:</b></span>
+                <input type="text"
+                       ng-model="moviesDetailsCtrl.imdbRating">
+            </label>	
+						
+            <label class="item item-input">
+                <span class="input-label"><b>Plot:</b></span>
+                <textarea rows="15" style="width: 62%"
+                          ng-model="moviesDetailsCtrl.plot">
+                </textarea>						   
+            </label>
+			
+            <label class="item item-input">
+                <span class="input-label"><b>IMDB:</b></span>
+                <input type="text"
+                       ng-model="moviesDetailsCtrl.imdbID">
+            </label>
+        </div>
+        <br>
+
+    </ion-content>
+		
+    <div ng-if="moviesDetailsCtrl.submitShowed" class="badge-div" ng-click="moviesDetailsCtrl.movieSubmit()">
+        <div class="badge-icon ion-checkmark"></div>
+    </div>
+</ion-view>
