@@ -26,21 +26,7 @@
         init();
 
         function init() {
-            $ionicLoading.show({
-                template: '<ion-spinner></ion-spinner>'
-            });
-
-            vm.movies = [];
-            vm.clear = false;
-            vm.searchShowed = false;
-
-            vm.movies = MoviesLocalStorage.getItems();
-            vm.moviesFilter = vm.movies;
-            $ionicLoading.hide();
-
-            if (vm.movies.length == 0) {
-                $state.go('root.movies-search');
-            }
+ 
         }
 
         function showSearch() {
