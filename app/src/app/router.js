@@ -41,7 +41,7 @@
                 }
             });
 
-        $urlRouterProvider.otherwise('root/map');
+        $urlRouterProvider.otherwise('root/home');
     }
 
 })();

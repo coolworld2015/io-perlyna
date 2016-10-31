@@ -2,7 +2,7 @@
 
     <ion-nav-buttons side="secondary">
         <button class="button button-icon ion-navicon"
-                ng-click="moviesSearchCtrl.showSearch()">
+                ng-click="mapCtrl.showSearch()">
         </button>
     </ion-nav-buttons>
 
@@ -22,7 +22,7 @@
 
     </ion-content>
 
-    <div ng-if="moviesSearchCtrl.searchShowed" class="badge-div" ng-click="moviesSearchCtrl.itemsSearch()">
-        <span class="badge-icon ion-search"></span>
+    <div ng-if="mapCtrl.searchShowed" class="badge-div" ng-click="mapCtrl.itemsSearch()">
+        <span class="badge-icon ion-ios-navigate"></span>
     </div>
 </ion-view>

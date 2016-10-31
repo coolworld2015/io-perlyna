@@ -79,7 +79,7 @@
         }
 
         function init() {
-            vm.searchShowed = false;
+            vm.searchShowed = true;
             vm.marker1 = '';
 
             var locations = [
