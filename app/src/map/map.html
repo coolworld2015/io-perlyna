@@ -1,0 +1,28 @@
+<ion-view view-title="PERLYNA RESORT - MAP">
+
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon ion-navicon"
+                ng-click="moviesSearchCtrl.showSearch()">
+        </button>
+    </ion-nav-buttons>
+
+    <ion-content class="padding" style="text-align: center; background-color: black;">
+
+        <ion-refresher on-refresh="moviesCtrl.doRefresh()"></ion-refresher>
+
+        <div style="text-align: center; background-color: black;">
+            <div style="color: white;">
+                PERLYNA RESORT - MAP
+            </div>
+            <div class="list">
+                <div id="map" style="width: 100%; height: 470px; float: left; margin-right: 25px; color: black">
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+
+    <div ng-if="moviesSearchCtrl.searchShowed" class="badge-div" ng-click="moviesSearchCtrl.itemsSearch()">
+        <span class="badge-icon ion-search"></span>
+    </div>
+</ion-view>
