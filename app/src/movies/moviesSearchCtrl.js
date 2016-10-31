@@ -45,7 +45,7 @@
 		
 		function getPos() {
 			if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(showPosition);
+				navigator.geolocation.getCurrentPosition(showPosition, onMapError, {maximumAge: 300000, timeout:10000, enableHighAccuracy : true});
 			} else {
 				alert("Geolocation is not supported by this browser.");
 			}
@@ -68,7 +68,12 @@
 					map: map
 				});
 		}
-			
+		
+		function onMapError(error) {
+			alert('code: ' + error.code + '\n' +
+			'message: ' + error.message + '\n');
+		}
+
         function init() {
 			vm.searchShowed = false;
 			vm.marker1 = '';
