@@ -88,7 +88,6 @@
                 ['А это - ПЛАВНИ', 49.5489871, 31.8649385, 3]
             ];
 
-
             var infowindow = new google.maps.InfoWindow();
 
             var marker, i;
