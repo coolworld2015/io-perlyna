@@ -5,17 +5,10 @@
         .module('app')
         .controller('MapCtrl', MapCtrl);
 
-    MapCtrl.$inject = ['$state', '$ionicLoading'];
+    MapCtrl.$inject = ['$scope', '$state', '$ionicLoading'];
 
-    function MapCtrl($state, $ionicLoading) {
+    function MapCtrl($scope, $state, $ionicLoading) {
         var vm = this;
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: new google.maps.LatLng(49.5443047, 31.8691583),
-            //mapTypeId: google.maps.MapTypeId.ROADMAP
-            mapTypeId: google.maps.MapTypeId.SATELLITE
-        });
 
         var symbolOne = {
             path: 'M -2,0 0,-2 2,0 0,2 z',
@@ -30,6 +23,7 @@
         angular.extend(vm, {
             showSearch: showSearch,
             itemsSearch: itemsSearch,
+			doRefresh: doRefresh,
             init: init
         });
 
@@ -41,6 +35,11 @@
 
         function itemsSearch() {
             getPos();
+        }        
+		
+		function doRefresh() {
+            init();
+			 $scope.$broadcast('scroll.refreshComplete');
         }
 
         function getPos() {
@@ -81,7 +80,14 @@
         function init() {
             vm.searchShowed = true;
             vm.marker1 = '';
-
+        
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 15,
+				center: new google.maps.LatLng(49.5443047, 31.8691583),
+				//mapTypeId: google.maps.MapTypeId.ROADMAP
+				mapTypeId: google.maps.MapTypeId.SATELLITE
+			});
+		
             var locations = [
                 ['Привет Саня - это Перлина Резорт', 49.5443047, 31.8691583, 1],
                 ['А это - ЛЕС', 49.5444189, 31.8661804, 2],
@@ -100,7 +106,6 @@
                 strokeColor: 'gold',
                 strokeWeight: 14
             };
-
 
             var image = 'no-img.png';
 
