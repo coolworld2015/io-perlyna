@@ -9,7 +9,9 @@
 
     function MapCtrl($scope, $state, $ionicLoading) {
         var vm = this;
+		
 
+			
         var symbolOne = {
             path: 'M -2,0 0,-2 2,0 0,2 z',
             strokeColor: 'gold',
@@ -61,7 +63,14 @@
 
             var lat = position.coords.latitude;
             var lng = position.coords.longitude;
-
+			
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 15,
+				center: new google.maps.LatLng(lat, lng),
+				//mapTypeId: google.maps.MapTypeId.ROADMAP
+				mapTypeId: google.maps.MapTypeId.SATELLITE
+			});
+			
             map.setCenter(new google.maps.LatLng(lat, lng));
             marker1 = new google.maps.Marker({
                 position: new google.maps.LatLng(lat, lng),
