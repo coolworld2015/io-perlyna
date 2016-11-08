@@ -87,8 +87,8 @@
             var lat = position.coords.latitude;
             var lng = position.coords.longitude;
 			
-			lat = 49.544000;
-			lng = 31.863000;
+			//lat = 49.544000;
+			//lng = 31.863000;
 			
 			 map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 15,
