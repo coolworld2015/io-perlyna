@@ -36,11 +36,11 @@
 
         var image = 'no-img.png';
 
-        var locations = [
-            ['Привет Саня - это Перлина Резорт', 49.5443047, 31.8691583, 1],
-            ['А это - ЛЕС', 49.5444189, 31.8661804, 2],
-            ['А это - ПЛАВНИ', 49.5489871, 31.8649385, 3]
-        ];
+		var locations = [
+			['<div style1="margin: 0px; background: #00FFFF; "><img src="logo.jpg" style="margin: 15px;"><b>Перлина Резорт</b></div>', 49.5443047, 31.8691583, 1],
+			['А это - ЛЕС', 49.5444189, 31.8661804, 2],
+			['А это - <b>ПЛАВНИ</b>', 49.5489871, 31.8649385, 3]
+		];
 
         var infowindow = new google.maps.InfoWindow();
         var marker, marker1;
