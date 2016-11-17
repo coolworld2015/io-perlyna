@@ -41,6 +41,20 @@
 			['А это - ЛЕС', 49.5444189, 31.8661804, 2],
 			['А это - <b>ПЛАВНИ</b>', 49.5489871, 31.8649385, 3]
 		];
+		
+		var flightPlanCoordinates = [
+			{lat: 49.5443047, lng: 31.8691583},
+			{lat: 49.5444189, lng: 31.8661804},
+			{lat: 49.5489871, lng: 31.8649385}
+		];
+		
+		var flightPath = new google.maps.Polyline({
+			path: flightPlanCoordinates,
+			geodesic: true,
+			strokeColor: '#FF0000',
+			strokeOpacity: 1.0,
+			strokeWeight: 2
+		});
 
         var infowindow = new google.maps.InfoWindow();
         var marker, marker1;
@@ -53,9 +67,10 @@
         });
 
         init();
-
+		
         function showSearch() {
-            vm.searchShowed = vm.searchShowed ? false : true;
+            //vm.searchShowed = vm.searchShowed ? false : true;
+			flightPath.setMap(map);
         }
 
         function itemsSearch() {
