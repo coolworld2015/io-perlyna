@@ -46,3 +46,4 @@ cordova plugin add cordova-plugin-inappbrowser
 add AndroidManifest
 -------------------------------------------------------------------------------------------------
 add icon to cordova\platforms\android\res\mipmap
+-------------------------------------------------------------------------------------------------
