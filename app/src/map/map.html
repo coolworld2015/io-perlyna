@@ -22,7 +22,39 @@
 
     </ion-content>
 
-    <div ng-if="mapCtrl.searchShowed" class="badge-div" ng-click="mapCtrl.itemsSearch()">
+    <div ng-if="mapCtrl.posMarkerShowed" class="badge-div" ng-click="mapCtrl.itemsSearch()">
         <span class="badge-icon ion-ios-navigate"></span>
+    </div>
+
+    <div ng-if="mapCtrl.searchShowed">
+        <div class="menu-div">
+            <div style="padding-top: 20px; padding-bottom: 20px">
+                Menu
+            </div>
+
+            <div style="
+                padding: 20px;
+                text-align: left;
+                font-size: 25px;"
+                 ng-click="mapCtrl.showPosMarker()">
+                Posision marker
+            </div>
+
+            <div style="
+                padding: 20px;
+                text-align: left;
+                font-size: 25px;"
+                 ng-click="mapCtrl.showRoutes()">
+                Routes show
+            </div>
+
+            <div style="
+                padding: 20px;
+                text-align: left;
+                font-size: 25px;"
+                 ng-click="mapCtrl.showSearch()">
+                Close
+            </div>
+        </div>
     </div>
 </ion-view>

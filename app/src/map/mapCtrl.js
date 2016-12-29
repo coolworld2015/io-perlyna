@@ -61,6 +61,8 @@
 
         angular.extend(vm, {
             showSearch: showSearch,
+            showPosMarker: showPosMarker,
+            showRoutes: showRoutes,
             itemsSearch: itemsSearch,
             doRefresh: doRefresh,
             init: init
@@ -69,8 +71,15 @@
         init();
 		
         function showSearch() {
-            //vm.searchShowed = vm.searchShowed ? false : true;
-			flightPath.setMap(map);
+            vm.searchShowed = vm.searchShowed ? false : true;
+        }
+
+        function showPosMarker() {
+            vm.posMarkerShowed = vm.posMarkerShowed ? false : true;
+        }
+
+        function showRoutes() {
+            flightPath.setMap(map);
         }
 
         function itemsSearch() {
@@ -141,7 +150,8 @@
         }
 
         function init() {
-            vm.searchShowed = true;
+            vm.searchShowed = false;
+            vm.posMarkerShowed = false;
             vm.marker1 = '';
 
             map = new google.maps.Map(document.getElementById('map'), {
